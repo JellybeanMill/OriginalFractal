@@ -28,18 +28,21 @@ public void draw()
 		greenCol = 0;
 		blueCol = (1-(colorDirection/(2/3*PI)))*255;
 	}
-	color mainColor = (redCol,greenCol,blueCol);
-	quadCreation((500-mouseX),(300-mouseY),1);
+	println("colorDirection: "+colorDirection);
+	println("redCol: "+redCol);
+	println("greenCol: "+greenCol);
+	println("blueCol: "+blueCol);
+	quadCreation((500-mouseX),(300-mouseY),1,redCol,greenCol,blueCol);
 }
-public void quadCreation(float xSep,float ySep,float sizeRank)
+public void quadCreation(float xSep,float ySep,float sizeRank,float colR,float colG,float colB)
 {
 	if(sizeRank<10)
 	{
 		//noStroke();
-		quadCreation(xSep*pow(0.955,sizeRank),ySep*pow(0.955,sizeRank),sizeRank+1);
+		quadCreation(xSep*pow(0.955,sizeRank),ySep*pow(0.955,sizeRank),sizeRank+1,colR*0.85,colG*0.85,colB*0.85);
 		stroke(0);
 		rectMode(CENTER);
-		fill(255);
+		fill(colR,colG,colB);
 		rect(500-xSep,300-ySep,sizeRank*100,sizeRank*60);
 		/*
 		float mainSizeX=(500-xSep);
