@@ -28,10 +28,6 @@ public void draw()
 		greenCol = 0;
 		blueCol = ((colorDirection+(PI))/(2.0/3*PI))*255;
 	}
-	println("colorDirection: "+((colorDirection+PI)/PI*180));
-	println("redCol: "+redCol);
-	println("greenCol: "+greenCol);
-	println("blueCol: "+blueCol);
 	quadCreation((500-mouseX),(300-mouseY),1,redCol,greenCol,blueCol);
 }
 public void quadCreation(float xSep,float ySep,float sizeRank,float colR,float colG,float colB)
